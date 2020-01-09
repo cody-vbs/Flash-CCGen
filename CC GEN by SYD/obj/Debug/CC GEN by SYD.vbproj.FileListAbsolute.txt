@@ -1,0 +1,11 @@
+C:\Users\syd\source\repos\CC GEN by SYD\CC GEN by SYD\obj\Debug\CC GEN by SYD.vbprojAssemblyReference.cache
+C:\Users\syd\source\repos\CC GEN by SYD\CC GEN by SYD\obj\Debug\CC_GEN_by_SYD.Resources.resources
+C:\Users\syd\source\repos\CC GEN by SYD\CC GEN by SYD\obj\Debug\CC GEN by SYD.vbproj.GenerateResource.cache
+C:\Users\syd\source\repos\CC GEN by SYD\CC GEN by SYD\bin\Debug\CC GEN by SYD.exe.config
+C:\Users\syd\source\repos\CC GEN by SYD\CC GEN by SYD\bin\Debug\CC GEN by SYD.exe
+C:\Users\syd\source\repos\CC GEN by SYD\CC GEN by SYD\bin\Debug\CC GEN by SYD.pdb
+C:\Users\syd\source\repos\CC GEN by SYD\CC GEN by SYD\bin\Debug\CC GEN by SYD.xml
+C:\Users\syd\source\repos\CC GEN by SYD\CC GEN by SYD\obj\Debug\CC GEN by SYD.exe
+C:\Users\syd\source\repos\CC GEN by SYD\CC GEN by SYD\obj\Debug\CC GEN by SYD.xml
+C:\Users\syd\source\repos\CC GEN by SYD\CC GEN by SYD\obj\Debug\CC GEN by SYD.pdb
+C:\Users\syd\source\repos\CC GEN by SYD\CC GEN by SYD\obj\Debug\CC_GEN_by_SYD.Form1.resources
