@@ -25,14 +25,14 @@ Partial Class Form1
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
+        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.GhostTheme1 = New CC_GEN_by_SYD.GhostTheme()
         Me.PanelScroll = New System.Windows.Forms.Panel()
         Me.LabelScroll = New System.Windows.Forms.Label()
-        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.ListBox1 = New System.Windows.Forms.ListBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label7 = New System.Windows.Forms.Label()
@@ -49,14 +49,50 @@ Partial Class Form1
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TextBoxBin = New CC_GEN_by_SYD.GhostTextBox()
         Me.GhostButtonGenerate = New CC_GEN_by_SYD.GhostButton()
-        Me.GhostTheme1.SuspendLayout()
-        Me.PanelScroll.SuspendLayout()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GhostTheme1.SuspendLayout()
+        Me.PanelScroll.SuspendLayout()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
+        '
+        'PictureBox4
+        '
+        Me.PictureBox4.BackColor = System.Drawing.Color.Transparent
+        Me.PictureBox4.BackgroundImage = CType(resources.GetObject("PictureBox4.BackgroundImage"), System.Drawing.Image)
+        Me.PictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.PictureBox4.Location = New System.Drawing.Point(594, 0)
+        Me.PictureBox4.Name = "PictureBox4"
+        Me.PictureBox4.Size = New System.Drawing.Size(37, 23)
+        Me.PictureBox4.TabIndex = 21
+        Me.PictureBox4.TabStop = False
+        Me.ToolTip1.SetToolTip(Me.PictureBox4, "Minimize")
+        '
+        'PictureBox3
+        '
+        Me.PictureBox3.BackColor = System.Drawing.Color.Transparent
+        Me.PictureBox3.BackgroundImage = CType(resources.GetObject("PictureBox3.BackgroundImage"), System.Drawing.Image)
+        Me.PictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PictureBox3.Location = New System.Drawing.Point(624, 0)
+        Me.PictureBox3.Name = "PictureBox3"
+        Me.PictureBox3.Size = New System.Drawing.Size(37, 23)
+        Me.PictureBox3.TabIndex = 20
+        Me.PictureBox3.TabStop = False
+        Me.ToolTip1.SetToolTip(Me.PictureBox3, "Close")
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.BackColor = System.Drawing.Color.Gray
+        Me.PictureBox1.BackgroundImage = CType(resources.GetObject("PictureBox1.BackgroundImage"), System.Drawing.Image)
+        Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.PictureBox1.Location = New System.Drawing.Point(619, 29)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(29, 28)
+        Me.PictureBox1.TabIndex = 18
+        Me.PictureBox1.TabStop = False
+        Me.ToolTip1.SetToolTip(Me.PictureBox1, "Copy CC")
         '
         'Timer1
         '
@@ -117,35 +153,11 @@ Partial Class Form1
         Me.LabelScroll.AutoSize = True
         Me.LabelScroll.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LabelScroll.ForeColor = System.Drawing.Color.Silver
-        Me.LabelScroll.Location = New System.Drawing.Point(87, 5)
+        Me.LabelScroll.Location = New System.Drawing.Point(74, 5)
         Me.LabelScroll.Name = "LabelScroll"
         Me.LabelScroll.Size = New System.Drawing.Size(146, 16)
         Me.LabelScroll.TabIndex = 22
         Me.LabelScroll.Text = "Developed By: SYD"
-        '
-        'PictureBox4
-        '
-        Me.PictureBox4.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox4.BackgroundImage = CType(resources.GetObject("PictureBox4.BackgroundImage"), System.Drawing.Image)
-        Me.PictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.PictureBox4.Location = New System.Drawing.Point(594, 0)
-        Me.PictureBox4.Name = "PictureBox4"
-        Me.PictureBox4.Size = New System.Drawing.Size(37, 23)
-        Me.PictureBox4.TabIndex = 21
-        Me.PictureBox4.TabStop = False
-        Me.ToolTip1.SetToolTip(Me.PictureBox4, "Minimize")
-        '
-        'PictureBox3
-        '
-        Me.PictureBox3.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox3.BackgroundImage = CType(resources.GetObject("PictureBox3.BackgroundImage"), System.Drawing.Image)
-        Me.PictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PictureBox3.Location = New System.Drawing.Point(624, 0)
-        Me.PictureBox3.Name = "PictureBox3"
-        Me.PictureBox3.Size = New System.Drawing.Size(37, 23)
-        Me.PictureBox3.TabIndex = 20
-        Me.PictureBox3.TabStop = False
-        Me.ToolTip1.SetToolTip(Me.PictureBox3, "Close")
         '
         'PictureBox2
         '
@@ -158,18 +170,6 @@ Partial Class Form1
         Me.PictureBox2.TabIndex = 19
         Me.PictureBox2.TabStop = False
         '
-        'PictureBox1
-        '
-        Me.PictureBox1.BackColor = System.Drawing.Color.Gray
-        Me.PictureBox1.BackgroundImage = CType(resources.GetObject("PictureBox1.BackgroundImage"), System.Drawing.Image)
-        Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.PictureBox1.Location = New System.Drawing.Point(619, 29)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(29, 28)
-        Me.PictureBox1.TabIndex = 18
-        Me.PictureBox1.TabStop = False
-        Me.ToolTip1.SetToolTip(Me.PictureBox1, "Copy CC")
-        '
         'ListBox1
         '
         Me.ListBox1.BackColor = System.Drawing.SystemColors.InfoText
@@ -177,6 +177,7 @@ Partial Class Form1
         Me.ListBox1.ForeColor = System.Drawing.Color.White
         Me.ListBox1.FormattingEnabled = True
         Me.ListBox1.ItemHeight = 16
+        Me.ListBox1.Items.AddRange(New Object() {"xxxxxxxxxxxxxxxx"})
         Me.ListBox1.Location = New System.Drawing.Point(350, 61)
         Me.ListBox1.Name = "ListBox1"
         Me.ListBox1.Size = New System.Drawing.Size(302, 276)
@@ -399,14 +400,14 @@ Partial Class Form1
         Me.Name = "Form1"
         Me.Text = "Form1"
         Me.TransparencyKey = System.Drawing.Color.Fuchsia
+        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GhostTheme1.ResumeLayout(False)
         Me.GhostTheme1.PerformLayout()
         Me.PanelScroll.ResumeLayout(False)
         Me.PanelScroll.PerformLayout()
-        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         Me.ResumeLayout(False)

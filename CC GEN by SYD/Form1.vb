@@ -5,14 +5,25 @@ Public Class Form1
         Dim quan As Integer = CType(TextBoxQuantity.Text, Integer)
         'clear the listbox first
         ListBox1.Items.Clear()
+        'this will add x's to the userbin val
+        Dim sb As New System.Text.StringBuilder
+        For num = 1 To 16 - TextBoxBin.Text.Length
+            sb.Append("x")
+        Next
+        TextBoxBin.Text = TextBoxBin.Text & sb.ToString()
 
         If (TextBoxBin.Text.Equals("453590")) Then
 
             MessageBox.Show("Please enter your BIN", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning)
         Else
-            For num = 1 To quan
-                generateCC()
-            Next
+            If (TextBoxCVV.Text.Length = 3) Or (TextBoxCVV.Text.Equals("Leave blank to randomize") Or (TextBoxCVV.Text.Equals(""))) Then
+                For num = 1 To quan
+                    generateCC()
+                Next
+            Else
+                MessageBox.Show("Invalid CVV. CVV number is 3 digits long", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End If
+
         End If
 
     End Sub
@@ -28,8 +39,10 @@ Public Class Form1
         Dim userCVV = getCVV()
 
         Dim r As String = "0123456789"
-        Dim userBin As String = TextBoxBin.Text
-        Dim characterString As Integer = 16 - TextBoxBin.Text.Length
+
+        Dim bin As String = TextBoxBin.Text.Replace("x", "")
+        Dim userBin As String = bin
+        Dim characterString As Integer = 16 - bin.Length
         Dim sb As New System.Text.StringBuilder
         sb.Append(userBin)
         For i As Integer = 1 To characterString
@@ -111,16 +124,16 @@ Public Class Form1
         Dim strCVV As String = "012456789"
         Dim characterString As Integer = 3
         Dim sb As New System.Text.StringBuilder
-        If (TextBoxCVV.Text.Equals("Leave a blank to randomize")) Then
-            MsgBox(TextBoxCVV.Text.Length > 0)
-            sb.Append(TextBoxCVV.Text)
-            cvv = sb.ToString
-        Else
+        If (TextBoxCVV.Text.Equals("Leave blank to randomize") Or (TextBoxCVV.Text.Equals(""))) Then
             For i As Integer = 1 To characterString
                 Dim index As Integer = rand.Next(0, strCVV.Length)
                 sb.Append(strCVV.Substring(index, 1))
             Next
-        End If
+        Else
+            sb.Append(TextBoxCVV.Text)
+                cvv = TextBoxCVV.Text
+
+            End If
         cvv = sb.ToString()
         Return cvv
     End Function
@@ -193,5 +206,15 @@ Public Class Form1
         End If
     End Sub
 
+    Private Sub TextBoxBin_Leave(sender As Object, e As EventArgs) Handles TextBoxBin.Leave
+        Dim sb As New System.Text.StringBuilder
+        For num = 1 To 16 - TextBoxBin.Text.Length
+            sb.Append("x")
+        Next
+        TextBoxBin.Text = TextBoxBin.Text & sb.ToString()
+    End Sub
 
+    Private Sub TextBoxBin_MouseLeave(sender As Object, e As EventArgs)
+
+    End Sub
 End Class
