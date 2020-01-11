@@ -49,6 +49,8 @@ Partial Class Form1
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TextBoxBin = New CC_GEN_by_SYD.GhostTextBox()
         Me.GhostButtonGenerate = New CC_GEN_by_SYD.GhostButton()
+        Me.GhostRadiobuttonValid = New CC_GEN_by_SYD.GhostRadiobutton()
+        Me.GhostRadiobuttonMixed = New CC_GEN_by_SYD.GhostRadiobutton()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -101,6 +103,8 @@ Partial Class Form1
         '
         Me.GhostTheme1.BorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.GhostTheme1.Colors = New CC_GEN_by_SYD.Bloom(-1) {}
+        Me.GhostTheme1.Controls.Add(Me.GhostRadiobuttonMixed)
+        Me.GhostTheme1.Controls.Add(Me.GhostRadiobuttonValid)
         Me.GhostTheme1.Controls.Add(Me.PanelScroll)
         Me.GhostTheme1.Controls.Add(Me.PictureBox4)
         Me.GhostTheme1.Controls.Add(Me.PictureBox3)
@@ -130,12 +134,12 @@ Partial Class Form1
         Me.GhostTheme1.Name = "GhostTheme1"
         Me.GhostTheme1.NoRounding = False
         Me.GhostTheme1.ShowIcon = True
-        Me.GhostTheme1.Sizable = True
+        Me.GhostTheme1.Sizable = False
         Me.GhostTheme1.Size = New System.Drawing.Size(664, 378)
         Me.GhostTheme1.SmartBounds = True
         Me.GhostTheme1.StartPosition = System.Windows.Forms.FormStartPosition.WindowsDefaultLocation
         Me.GhostTheme1.TabIndex = 0
-        Me.GhostTheme1.Text = "Flash CCGen"
+        Me.GhostTheme1.Text = "Flash BIN CCGen"
         Me.GhostTheme1.TransparencyKey = System.Drawing.Color.Fuchsia
         Me.GhostTheme1.Transparent = False
         '
@@ -240,7 +244,7 @@ Partial Class Form1
         Me.Label5.BackColor = System.Drawing.Color.Transparent
         Me.Label5.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.Label5.Location = New System.Drawing.Point(171, 219)
+        Me.Label5.Location = New System.Drawing.Point(172, 203)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(71, 18)
         Me.Label5.TabIndex = 12
@@ -251,7 +255,7 @@ Partial Class Form1
         Me.TextBoxQuantity.Customization = "/////wAAAP8AAAD/Wlpa/w=="
         Me.TextBoxQuantity.Font = New System.Drawing.Font("Verdana", 8.0!)
         Me.TextBoxQuantity.Image = Nothing
-        Me.TextBoxQuantity.Location = New System.Drawing.Point(177, 242)
+        Me.TextBoxQuantity.Location = New System.Drawing.Point(178, 226)
         Me.TextBoxQuantity.MaxLength = 32767
         Me.TextBoxQuantity.Multiline = False
         Me.TextBoxQuantity.Name = "TextBoxQuantity"
@@ -270,7 +274,7 @@ Partial Class Form1
         Me.Label4.BackColor = System.Drawing.Color.Transparent
         Me.Label4.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.Label4.Location = New System.Drawing.Point(12, 219)
+        Me.Label4.Location = New System.Drawing.Point(13, 203)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(39, 18)
         Me.Label4.TabIndex = 10
@@ -281,7 +285,7 @@ Partial Class Form1
         Me.TextBoxCVV.Customization = "/////wAAAP8AAAD/Wlpa/w=="
         Me.TextBoxCVV.Font = New System.Drawing.Font("Verdana", 8.0!)
         Me.TextBoxCVV.Image = Nothing
-        Me.TextBoxCVV.Location = New System.Drawing.Point(13, 242)
+        Me.TextBoxCVV.Location = New System.Drawing.Point(14, 226)
         Me.TextBoxCVV.MaxLength = 32767
         Me.TextBoxCVV.Multiline = False
         Me.TextBoxCVV.Name = "TextBoxCVV"
@@ -300,7 +304,7 @@ Partial Class Form1
         Me.Label3.BackColor = System.Drawing.Color.Transparent
         Me.Label3.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.Label3.Location = New System.Drawing.Point(172, 151)
+        Me.Label3.Location = New System.Drawing.Point(172, 139)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(46, 18)
         Me.Label3.TabIndex = 8
@@ -314,7 +318,7 @@ Partial Class Form1
         Me.ComboBoxYear.FormattingEnabled = True
         Me.ComboBoxYear.ItemHeight = 20
         Me.ComboBoxYear.Items.AddRange(New Object() {"Random", "2020", "2021", "2022", "2023", "2024", "2025", "2026", "2027", "2028"})
-        Me.ComboBoxYear.Location = New System.Drawing.Point(175, 174)
+        Me.ComboBoxYear.Location = New System.Drawing.Point(175, 162)
         Me.ComboBoxYear.Name = "ComboBoxYear"
         Me.ComboBoxYear.Size = New System.Drawing.Size(146, 26)
         Me.ComboBoxYear.TabIndex = 7
@@ -325,7 +329,7 @@ Partial Class Form1
         Me.Label2.BackColor = System.Drawing.Color.Transparent
         Me.Label2.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.Label2.Location = New System.Drawing.Point(9, 151)
+        Me.Label2.Location = New System.Drawing.Point(9, 139)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(64, 18)
         Me.Label2.TabIndex = 6
@@ -339,7 +343,7 @@ Partial Class Form1
         Me.ComboBoxMonth.FormattingEnabled = True
         Me.ComboBoxMonth.ItemHeight = 20
         Me.ComboBoxMonth.Items.AddRange(New Object() {"Random", "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"})
-        Me.ComboBoxMonth.Location = New System.Drawing.Point(11, 174)
+        Me.ComboBoxMonth.Location = New System.Drawing.Point(11, 162)
         Me.ComboBoxMonth.Name = "ComboBoxMonth"
         Me.ComboBoxMonth.Size = New System.Drawing.Size(146, 26)
         Me.ComboBoxMonth.TabIndex = 5
@@ -390,6 +394,36 @@ Partial Class Form1
         Me.GhostButtonGenerate.Text = "Generate"
         Me.GhostButtonGenerate.Transparent = False
         '
+        'GhostRadiobuttonValid
+        '
+        Me.GhostRadiobuttonValid.Checked = False
+        Me.GhostRadiobuttonValid.Colors = New CC_GEN_by_SYD.Bloom(-1) {}
+        Me.GhostRadiobuttonValid.Customization = ""
+        Me.GhostRadiobuttonValid.Font = New System.Drawing.Font("Verdana", 8.0!)
+        Me.GhostRadiobuttonValid.Image = Nothing
+        Me.GhostRadiobuttonValid.Location = New System.Drawing.Point(51, 261)
+        Me.GhostRadiobuttonValid.Name = "GhostRadiobuttonValid"
+        Me.GhostRadiobuttonValid.NoRounding = False
+        Me.GhostRadiobuttonValid.Size = New System.Drawing.Size(80, 14)
+        Me.GhostRadiobuttonValid.TabIndex = 24
+        Me.GhostRadiobuttonValid.Text = "Only Valid"
+        Me.GhostRadiobuttonValid.Transparent = False
+        '
+        'GhostRadiobuttonMixed
+        '
+        Me.GhostRadiobuttonMixed.Checked = False
+        Me.GhostRadiobuttonMixed.Colors = New CC_GEN_by_SYD.Bloom(-1) {}
+        Me.GhostRadiobuttonMixed.Customization = ""
+        Me.GhostRadiobuttonMixed.Font = New System.Drawing.Font("Verdana", 8.0!)
+        Me.GhostRadiobuttonMixed.Image = Nothing
+        Me.GhostRadiobuttonMixed.Location = New System.Drawing.Point(175, 261)
+        Me.GhostRadiobuttonMixed.Name = "GhostRadiobuttonMixed"
+        Me.GhostRadiobuttonMixed.NoRounding = False
+        Me.GhostRadiobuttonMixed.Size = New System.Drawing.Size(56, 14)
+        Me.GhostRadiobuttonMixed.TabIndex = 25
+        Me.GhostRadiobuttonMixed.Text = "Mixed"
+        Me.GhostRadiobuttonMixed.Transparent = False
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -439,4 +473,6 @@ Partial Class Form1
     Friend WithEvents PanelScroll As Panel
     Friend WithEvents LabelScroll As Label
     Friend WithEvents Timer1 As Timer
+    Friend WithEvents GhostRadiobuttonMixed As GhostRadiobutton
+    Friend WithEvents GhostRadiobuttonValid As GhostRadiobutton
 End Class

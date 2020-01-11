@@ -18,8 +18,23 @@ Public Class Form1
         Else
             If (TextBoxCVV.Text.Length = 3) Or (TextBoxCVV.Text.Equals("Leave blank to randomize") Or (TextBoxCVV.Text.Equals(""))) Then
                 For num = 1 To quan
-                    generateCC()
+                    If (GhostRadiobuttonValid.Checked) Then
+                        generateCC()
+                        ' MessageBox.Show(ListBox1.Items.Count.ToString & " cc produced", "Flash BIN CCGen", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+                    Else
+                        generateCCMixed()
+                        ' MessageBox.Show(ListBox1.Items.Count.ToString & " cc produced", "Flash BIN CCGen", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+                    End If
+
+
                 Next
+                If (GhostRadiobuttonValid.Checked) Then
+                    MessageBox.Show(ListBox1.Items.Count.ToString & " cc produced", "Flash BIN CCGen", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                Else
+                    MessageBox.Show(ListBox1.Items.Count.ToString & " cc produced", "Flash BIN CCGen", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                End If
             Else
                 MessageBox.Show("Invalid CVV. CVV number is 3 digits long", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             End If
@@ -28,7 +43,7 @@ Public Class Form1
 
     End Sub
 
-
+    'this function will generate valid cc only
     Sub generateCC()
 
         'retrieving month
@@ -48,11 +63,46 @@ Public Class Form1
         For i As Integer = 1 To characterString
             Dim index As Integer = rand.Next(0, r.Length)
             sb.Append(r.Substring(index, 1))
+
         Next
+        If (checkValid(sb.ToString)) Then
+            sb.Append("|" & userMonth)
+            sb.Append("|" & userYear)
+            sb.Append("|" & userCVV)
+            ListBox1.Items.Add(sb.ToString())
+        End If
+
+    End Sub
+
+    'this function will generate mixed cc
+    Sub generateCCMixed()
+
+        'retrieving month
+        Dim userMonth = getMonth()
+        'retrieving year
+        Dim userYear = getYear()
+        'retrieving cvv
+        Dim userCVV = getCVV()
+
+        Dim r As String = "0123456789"
+
+        Dim bin As String = TextBoxBin.Text.Replace("x", "")
+        Dim userBin As String = bin
+        Dim characterString As Integer = 16 - bin.Length
+        Dim sb As New System.Text.StringBuilder
+        sb.Append(userBin)
+        For i As Integer = 1 To characterString
+            Dim index As Integer = rand.Next(0, r.Length)
+            sb.Append(r.Substring(index, 1))
+
+        Next
+
         sb.Append("|" & userMonth)
         sb.Append("|" & userYear)
         sb.Append("|" & userCVV)
         ListBox1.Items.Add(sb.ToString())
+
+
     End Sub
 
     'function for getting the month
@@ -152,7 +202,7 @@ Public Class Form1
             Next
             sw.WriteLine()
             sw.WriteLine()
-            MessageBox.Show("All CC are exported successfully", "Flash CCGen", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            MessageBox.Show("All CC are exported successfully", "Flash BIN CCGen", MessageBoxButtons.OK, MessageBoxIcon.Information)
             sw.Close() ' close the file
         End If
 
@@ -164,11 +214,13 @@ Public Class Form1
         ListBox1.SelectionMode = SelectionMode.MultiSimple
         Me.Icon = My.Resources.flash_icon
         Timer1.Enabled = True
+        'set the radiobutton valid to be checked during runtime
+        GhostRadiobuttonValid.Checked = True
     End Sub
 
     Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
         If (ListBox1.Items.Count <= 0) Then
-            MessageBox.Show("Nothing to copy here", "Flash CCGen", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("Nothing to copy here", "Flash BIN CCGen", MessageBoxButtons.OK, MessageBoxIcon.Error)
         Else
             Dim copy_buffer As New System.Text.StringBuilder
             For Each item As Object In ListBox1.Items
@@ -176,13 +228,13 @@ Public Class Form1
             Next
             If copy_buffer.Length > 0 Then
                 Clipboard.SetText(copy_buffer.ToString)
-                MessageBox.Show("Copied CC to Clipboard", "Flash CCGen", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                MessageBox.Show("Copied CC to Clipboard", "Flash BIN CCGen", MessageBoxButtons.OK, MessageBoxIcon.Information)
             End If
         End If
     End Sub
 
     Private Sub PictureBox3_Click(sender As Object, e As EventArgs) Handles PictureBox3.Click
-        Select Case MessageBox.Show("Are you sure you want to close ?", "Flash CCGen", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+        Select Case MessageBox.Show("Are you sure you want to close ?", "Flash BIN CCGen", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
             Case Windows.Forms.DialogResult.Yes
                 Me.Close()
             Case Windows.Forms.DialogResult.No
@@ -217,4 +269,31 @@ Public Class Form1
     Private Sub TextBoxBin_MouseLeave(sender As Object, e As EventArgs)
 
     End Sub
+
+    'function for checking cc validity
+    Function checkValid(ByVal cardNo As String) As Boolean
+        Dim checkSum As Integer = 0
+        Dim doubleFlag As Boolean = (cardNo.Length Mod 2 = 0)
+        Dim digit As Char
+        Dim digitVal As Integer
+        Try
+
+            For Each digit In cardNo
+                digitVal = Integer.Parse(digit)
+                If (doubleFlag) Then
+                    digitVal *= 2
+                    If (digitVal > 9) Then
+                        digitVal -= 9
+                    End If
+                End If
+                checkSum += digitVal
+                doubleFlag = Not doubleFlag
+            Next
+
+
+        Catch ex As Exception
+
+        End Try
+        Return (checkSum Mod 10 = 0)
+    End Function
 End Class
